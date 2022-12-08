@@ -1,0 +1,140 @@
+<h2 class="product text-center">Product List</h2>
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-default"
+            >Select BodyType</span
+          >
+        </div>
+        <select
+          class="select-dropdown"
+          [(ngModel)]="selectType"
+          (change)="getfilteredProducts()"
+        >
+          <option selected disabled>Select BodyType</option>
+          <option Value="suv">SUV</option>
+          <option Value="estate">ESTATE</option>
+          <option Value="sedan">SEDAN</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="mt-5">
+  <owl-carousel-o *ngIf="isDone" [options]="customOptions">
+    <ng-template *ngFor="let item of productList" carouselSlide>
+      <div>{{ item.bodyType | uppercase }}</div>
+      <div>
+        <b>{{ item.modelName }}</b> {{ item.modelType }}
+      </div>
+      <div class="slide">
+        <img src="{{ item.imageUrl }}" />
+        <!-- ../../assets/images/s60_recharge.jpg -->
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 text-end">
+            <div>
+              <b>
+                <a class="redirect" routerLink="/learn">LEARN</a>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="11"
+                  fill="currentColor"
+                  class="bi bi-chevron-right chavron-sign"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+                  />
+                </svg>
+              </b>
+            </div>
+          </div>
+          <div class="col-md-6 text-start">
+            <div>
+              <b>
+                <a class="redirect" routerLink="/shop">SHOP</a>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="11"
+                  fill="currentColor"
+                  class="bi bi-chevron-right chavron-sign"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+                  />
+                </svg>
+              </b>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </owl-carousel-o>
+</div>
+<div class="mt-5">
+  <owl-carousel-o *ngIf="!isDone" [options]="customOptions">
+    <ng-template *ngFor="let item of mainList" carouselSlide>
+      <div>{{ item.bodyType | uppercase }}</div>
+      <div>
+        <b>{{ item.modelName }}</b> {{ item.modelType }}
+      </div>
+      <div class="slide">
+        <img src="{{ item.imageUrl }}" />
+     
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 text-end">
+            <div>
+              <b>
+                <a class="redirect" routerLink="/learn">LEARN</a>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="11"
+                  fill="currentColor"
+                  class="bi bi-chevron-right chavron-sign"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+                  />
+                </svg>
+              </b>
+            </div>
+          </div>
+          <div class="col-md-6 text-start">
+            <div>
+              <b>
+                <a class="redirect" routerLink="/shop">SHOP</a>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="11"
+                  fill="currentColor"
+                  class="bi bi-chevron-right chavron-sign"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+                  />
+                </svg>
+              </b>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </owl-carousel-o>
+</div>

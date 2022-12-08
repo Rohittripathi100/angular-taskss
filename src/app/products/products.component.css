@@ -1,0 +1,18 @@
+.redirect{
+    text-decoration: none;
+}
+
+.chavron-sign{
+    margin-bottom: 2px;
+    color: rgb(28, 107, 186);
+
+    
+}
+.product{
+    color: blue;
+}
+.select-dropdown{
+    width: 18%;
+    padding: 5px ;
+    border-radius: 5px;
+    }
